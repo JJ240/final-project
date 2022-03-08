@@ -1,0 +1,38 @@
+<div class="row mt-3">
+    <div class="col-md-12" style="text-align: right;">
+        <a routerLink="/product/new" class="btn btn-success">Add new Product</a>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="h1">All Product</div>
+    <div class="col-md-12 mt-2">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Manage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <tr *ngFor="let p of products">
+
+
+                    <td>{{ p.Product_id }}</td>
+                    <td>{{ p.name }}</td>p
+                    <td>{{ p.price }}</td>
+                    <td>
+                        <a class="btn btn-info btn-sm" routerLink="/product/edit/{{p._id}}">
+                            Edit
+                        </a>
+                        <a class="btn btn-danger btn-sm" (click)="deleteProduct(p._id)">
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
